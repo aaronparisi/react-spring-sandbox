@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useSpring, animated, config } from 'react-spring';
 
-const SlideOnClickReset: React.FC = () => {
+const LoopOnClick: React.FC = () => {
   const [isAnimated, setIsAnimated] = useState<boolean>(false);
 
   const [slideSpring, slideApi] = useSpring(() => {
@@ -11,10 +11,11 @@ const SlideOnClickReset: React.FC = () => {
   });
 
   const handleClick = () => {
-    console.log('user clicked on SlideOnClickReset; sliding now');
+    console.log('user clicked on LoopOnClick; sliding now');
     slideApi.start({
       x: isAnimated ? 100 : 500,
       config: config.wobbly,
+      loop: true,
     });
 
     setIsAnimated((prev) => !prev);
@@ -30,12 +31,11 @@ const SlideOnClickReset: React.FC = () => {
         ></animated.div>
       </section>
       <p>
-        This spring enables us to "reverse" the animation every other click. It
-        does so via a component state variable + ternary operator in spring
-        declaration.
+        This one loops in the most naive way possible. Refresh the page to stop
+        it.
       </p>
     </section>
   );
 };
 
-export default SlideOnClickReset;
+export default LoopOnClick;

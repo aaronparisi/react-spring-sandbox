@@ -4,7 +4,7 @@ import { useSpring, animated, config } from 'react-spring';
 const SlideOnClick: React.FC = () => {
   const [slideSpring, slideApi] = useSpring(() => {
     return {
-      from: { x: 0 },
+      from: { x: 100 },
     };
   });
 
@@ -12,10 +12,10 @@ const SlideOnClick: React.FC = () => {
     console.log('user clicked on SlideOnClick; sliding now');
     slideApi.start({
       from: {
-        x: 0,
+        x: 100,
       },
       to: {
-        x: 100,
+        x: 500,
       },
       config: config.wobbly,
     });

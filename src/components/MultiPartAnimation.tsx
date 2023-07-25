@@ -1,9 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useSpring, animated, config } from 'react-spring';
 
-const SlideOnClickReset: React.FC = () => {
-  const [isAnimated, setIsAnimated] = useState<boolean>(false);
-
+const MultiPartAnimation: React.FC = () => {
   const [slideSpring, slideApi] = useSpring(() => {
     return {
       from: { x: 100 },
@@ -11,13 +9,12 @@ const SlideOnClickReset: React.FC = () => {
   });
 
   const handleClick = () => {
-    console.log('user clicked on SlideOnClickReset; sliding now');
     slideApi.start({
-      x: isAnimated ? 100 : 500,
+      from: { x: 100 },
+      to: [{ x: 300 }, { x: 0 }, { x: 600 }, { x: 100 }],
       config: config.wobbly,
+      loop: true,
     });
-
-    setIsAnimated((prev) => !prev);
   };
 
   return (
@@ -25,17 +22,16 @@ const SlideOnClickReset: React.FC = () => {
       <section className="animation-window">
         <animated.div
           className="slide-on-click-reset springy"
-          onClick={handleClick}
           style={slideSpring}
+          onClick={handleClick}
         ></animated.div>
       </section>
       <p>
-        This spring enables us to "reverse" the animation every other click. It
-        does so via a component state variable + ternary operator in spring
-        declaration.
+        This animation takes an <em>array</em> for its `to` property. `loop`
+        seems to only work as expected when `to` "ends up" at `from`.
       </p>
     </section>
   );
 };
 
-export default SlideOnClickReset;
+export default MultiPartAnimation;
