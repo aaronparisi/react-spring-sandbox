@@ -1,8 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { animated, useTransition, config } from 'react-spring';
 
 const TransitionArray: React.FC = () => {
   const [data, setData] = useState<number[]>([]);
+  const [running, setRunning] = useState<boolean>(false);
+  const intervalRef = useRef<NodeJS.Timeout | null>(null);
   // const [transitions, transitionsApi] = useTransition(data, () => {
   //   return {
   //     from: { opacity: 0, transform: 'translateY(100%)' },
@@ -19,17 +21,30 @@ const TransitionArray: React.FC = () => {
   });
 
   const handleClick = () => {
-    if (data.length !== 0) {
-      console.log('clearing data');
-      setData([]);
-    } else {
-      setData([1, 2, 3, 4]);
-    }
+    setRunning((prev) => !prev);
   };
 
   useEffect(() => {
-    console.log(data);
-  }, [data]);
+    if (running) {
+      console.log('setting interval');
+      intervalRef.current = setInterval(() => {
+        console.log('hello from interval cb');
+        setData((prev) => {
+          if (prev.length === 0) {
+            return [1, 2, 3, 4];
+          } else {
+            return [];
+          }
+        });
+      }, 2000);
+    } else {
+      console.log('clearing interval');
+      setData([]);
+      clearInterval(intervalRef.current as NodeJS.Timeout);
+    }
+
+    return () => clearInterval(intervalRef.current as NodeJS.Timeout);
+  }, [running]);
 
   return (
     <section className="pane">
@@ -51,8 +66,9 @@ const TransitionArray: React.FC = () => {
         <span>
           <button onClick={handleClick}>here</button>
         </span>{' '}
-        to [ {data.length ? 'exit' : 'enter'} ] the blocks. Doesn't seem to be
-        working when passing function to useTransition...
+        to [ {running ? 'stop' : 'start'} ] the animation. Doesn't seem to be
+        working when passing function to useTransition. Small enough interval
+        values mess it up as well.
       </p>
     </section>
   );
