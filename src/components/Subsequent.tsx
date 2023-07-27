@@ -4,7 +4,6 @@ import { animated, useTransition, config } from 'react-spring';
 const Subsequent: React.FC = () => {
   const nums = [1, 2, 3, 4];
   const [idx, setIdx] = useState<number>(1);
-  const [unrested, setUnrested] = useState<number[]>([1]);
 
   // @ts-ignore
   const handleTransitionRest = (result, spring, item) => {

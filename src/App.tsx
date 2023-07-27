@@ -9,6 +9,7 @@ import MultiPartAnimation from './components/MultiPartAnimation';
 import TransitionArray from './components/TransitionArray';
 import Bouncer from './components/Bouncer';
 import Subsequent from './components/Subsequent';
+import SubsequentManual from './components/SubsequentManual';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
       <MultiPartAnimation />
       <TransitionArray />
       <Subsequent />
+      <SubsequentManual />
     </div>
   );
 }
