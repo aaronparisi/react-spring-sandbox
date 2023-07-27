@@ -16,7 +16,7 @@ interface Button {
 
 const SubsequentManual: React.FC = () => {
   const nums = [1, 2, 3, 4];
-  const [idx, setIdx] = useState<number>(1);
+  const [idx, setIdx] = useState<number>(0);
   const [empty, setEmpty] = useState<boolean>(true);
   const [full, setFull] = useState<boolean>(false);
   const [entering, setEntering] = useState<boolean>(false);
@@ -24,8 +24,6 @@ const SubsequentManual: React.FC = () => {
   const [allAtOnce, setAllAtOnce] = useState<boolean>(false);
   const [buttons, setButtons] = useState<Button[]>([]);
 
-  // TODO there is a bug in here somewhere.
-  // on page load, item 1 comes in and then leaves automatically......
   const enterAllAtOnce = (
     result: AnimationResult,
     spring: Controller | SpringValue,
