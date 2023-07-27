@@ -19,15 +19,14 @@ body {
   padding: 1rem;
 }
 
-.springy {
-  background-color: var(--color-springy-primary);
-  height: 80px;
-  width: 80px;
-  border-radius: 8px;
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
 }
 
 .pane {
-  overflow: hidden;
   width: 100%;
 
   border: 1px solid #eeeeee;
@@ -38,9 +37,39 @@ body {
   justify-content: stretch;
   align-items: center;
   gap: 1rem;
+
   padding: 1rem;
 }
 
 .pane > * {
   flex: 1 1 50%;
+}
+
+.pane > .animation-window {
+  position: relative;
+  height: 80px;
+  background-color: #000000;
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: row;
+  /* justify-content: space-evenly; */
+  justify-content: flex-start;
+  align-items: center;
+  gap: 2rem;
+}
+
+.springy {
+  background-color: var(--color-springy-primary);
+  height: 80px;
+  width: 80px;
+  border-radius: 8px;
+
+  position: absolute;
+  left: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #131313;
 }

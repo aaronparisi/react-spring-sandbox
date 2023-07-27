@@ -11,7 +11,7 @@ const MultiPartAnimation: React.FC = () => {
   const handleClick = () => {
     slideApi.start({
       from: { x: 100 },
-      to: [{ x: 300 }, { x: 0 }, { x: 600 }, { x: 100 }],
+      to: [{ x: 200 }, { x: 300 }, { x: 400 }, { x: 500 }, { x: 100 }],
       config: config.wobbly,
       loop: true,
     });

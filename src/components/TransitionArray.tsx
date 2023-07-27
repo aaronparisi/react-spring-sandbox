@@ -26,9 +26,9 @@ const TransitionArray: React.FC = () => {
 
   useEffect(() => {
     if (running) {
-      console.log('setting interval');
+      // so we get animation immediately
+      setData([1, 2, 3, 4]);
       intervalRef.current = setInterval(() => {
-        console.log('hello from interval cb');
         setData((prev) => {
           if (prev.length === 0) {
             return [1, 2, 3, 4];
@@ -38,7 +38,6 @@ const TransitionArray: React.FC = () => {
         });
       }, 2000);
     } else {
-      console.log('clearing interval');
       setData([]);
       clearInterval(intervalRef.current as NodeJS.Timeout);
     }
