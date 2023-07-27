@@ -25,10 +25,12 @@ const SlideOnClick: React.FC = () => {
     <section className="pane">
       <section className="animation-window">
         <animated.div
-          className="slide-on-click springy"
+          className="clickable springy"
           onClick={handleClick}
           style={slideSpring}
-        ></animated.div>
+        >
+          Click
+        </animated.div>
       </section>
       <p>
         Click events are handled by a function that calls `api.start`

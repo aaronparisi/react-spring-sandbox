@@ -35,10 +35,7 @@ const LoopWithCancel: React.FC = () => {
   return (
     <section className="pane">
       <section className="animation-window">
-        <animated.div
-          className="slide-on-click-reset springy"
-          style={slideSpring}
-        ></animated.div>
+        <animated.div className="springy" style={slideSpring}></animated.div>
       </section>
       <p>
         This animation loops as you'd expect. Click{' '}

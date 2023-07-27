@@ -25,10 +25,12 @@ const LoopOnClick: React.FC = () => {
     <section className="pane">
       <section className="animation-window">
         <animated.div
-          className="slide-on-click-reset springy"
+          className="clickable springy"
           onClick={handleClick}
           style={slideSpring}
-        ></animated.div>
+        >
+          Click
+        </animated.div>
       </section>
       <p>
         This one loops in the most naive way possible. Refresh the page to stop

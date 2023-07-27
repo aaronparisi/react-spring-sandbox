@@ -21,10 +21,12 @@ const MultiPartAnimation: React.FC = () => {
     <section className="pane">
       <section className="animation-window">
         <animated.div
-          className="slide-on-click-reset springy"
+          className="clickable springy"
           style={slideSpring}
           onClick={handleClick}
-        ></animated.div>
+        >
+          Click
+        </animated.div>
       </section>
       <p>
         This animation takes an <em>array</em> for its `to` property. `loop`

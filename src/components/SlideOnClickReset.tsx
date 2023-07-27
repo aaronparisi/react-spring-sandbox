@@ -24,10 +24,12 @@ const SlideOnClickReset: React.FC = () => {
     <section className="pane">
       <section className="animation-window">
         <animated.div
-          className="slide-on-click-reset springy"
+          className="clickable springy"
           onClick={handleClick}
           style={slideSpring}
-        ></animated.div>
+        >
+          Click
+        </animated.div>
       </section>
       <p>
         This spring enables us to "reverse" the animation every other click. It
