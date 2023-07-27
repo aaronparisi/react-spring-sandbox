@@ -10,6 +10,7 @@ import TransitionArray from './components/TransitionArray';
 import Bouncer from './components/Bouncer';
 import Subsequent from './components/Subsequent';
 import SubsequentManual from './components/SubsequentManual';
+import SubsequentManualRadio from './components/SubsequentManualRadio';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
       <TransitionArray />
       <Subsequent />
       <SubsequentManual />
+      <SubsequentManualRadio />
     </div>
   );
 }

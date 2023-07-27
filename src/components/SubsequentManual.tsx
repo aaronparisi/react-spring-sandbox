@@ -24,6 +24,8 @@ const SubsequentManual: React.FC = () => {
   const [allAtOnce, setAllAtOnce] = useState<boolean>(false);
   const [buttons, setButtons] = useState<Button[]>([]);
 
+  // TODO there is a bug in here somewhere.
+  // on page load, item 1 comes in and then leaves automatically......
   const enterAllAtOnce = (
     result: AnimationResult,
     spring: Controller | SpringValue,
@@ -183,15 +185,14 @@ const SubsequentManual: React.FC = () => {
         })}
       </section>
       <p>
-        <span>
-          {buttons.map((btn, idx) => {
-            return (
-              <button key={btn.text + idx} onClick={btn.onClick}>
-                {btn.text} {idx === 0 ? 'all at once' : 'one at a time'}
-              </button>
-            );
-          })}
-        </span>
+        {buttons.map((btn, idx) => {
+          return (
+            <span key={btn.text + idx}>
+              <button onClick={btn.onClick}>{btn.text}</button>
+              {idx === 0 ? 'all at once' : 'one at a time'}
+            </span>
+          );
+        })}
       </p>
     </section>
   );
