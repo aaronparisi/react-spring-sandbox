@@ -1,18 +1,5 @@
 import React, { ChangeEvent, useEffect, useState } from 'react';
-import {
-  animated,
-  useTransition,
-  config,
-  AnimationResult,
-  Controller,
-  SpringValue,
-} from 'react-spring';
-
-interface Button {
-  disabled: boolean;
-  text: string;
-  onClick: () => void;
-}
+import { animated, useTransition, config } from 'react-spring';
 
 const SubsequentManualRadio: React.FC = () => {
   const nums = [1, 2, 3, 4];

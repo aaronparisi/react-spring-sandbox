@@ -11,6 +11,7 @@ import Bouncer from './components/Bouncer';
 import Subsequent from './components/Subsequent';
 import SubsequentManual from './components/SubsequentManual';
 import SubsequentManualRadio from './components/SubsequentManualRadio';
+import Conveyer from './components/Conveyer';
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
       <Subsequent />
       <SubsequentManual />
       <SubsequentManualRadio />
+      <Conveyer />
     </div>
   );
 }
