@@ -182,16 +182,20 @@ const SubsequentManual: React.FC = () => {
           );
         })}
       </section>
-      <p>
+      <section>
         {buttons.map((btn, idx) => {
           return (
-            <span key={btn.text + idx}>
-              <button onClick={btn.onClick}>{btn.text}</button>
-              {idx === 0 ? 'all at once' : 'one at a time'}
-            </span>
+            <div key={btn.text + idx}>
+              <button disabled={btn.disabled} onClick={btn.onClick}>
+                {btn.text}
+              </button>
+              {idx === 0
+                ? "all at once (delay comes from spring's `trail` property)"
+                : "one at a time (items await previous item's onRest)"}
+            </div>
           );
         })}
-      </p>
+      </section>
     </section>
   );
 };
