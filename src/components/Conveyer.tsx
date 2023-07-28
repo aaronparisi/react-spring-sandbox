@@ -33,9 +33,7 @@ const Conveyer: React.FC = () => {
     enter: { transform: 'translateY(0%)' },
     leave: { transform: 'translateY(-400%)' },
     onRest: handleTransitionRest,
-    // exitBeforeEnter: true,
     config: (item, index, state) => {
-      // return config.wobbly;
       return {
         ...config.wobbly,
         bounce: state === 'enter' ? 2 : 0,
