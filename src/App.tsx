@@ -12,7 +12,8 @@ import Subsequent from './components/Subsequent';
 import SubsequentManual from './components/SubsequentManual';
 import SubsequentManualRadio from './components/SubsequentManualRadio';
 import Conveyer from './components/Conveyer';
-import ConveyerSmooth from './components/ConveyerSmooth';
+import ConveyerBroken from './components/ConveyerBroken';
+import ConveyerSingle from './components/ConveyerSingle';
 
 function App() {
   return (
@@ -28,7 +29,7 @@ function App() {
       <SubsequentManual />
       <SubsequentManualRadio />
       <Conveyer />
-      <ConveyerSmooth />
+      <ConveyerSingle />
     </div>
   );
 }
