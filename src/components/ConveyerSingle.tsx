@@ -15,8 +15,6 @@ const ConveyerSingle: React.FC = () => {
       await next({ transform: 'translate3d(400px, -400%, 0)' });
     },
     config: { ...config.wobbly, bounce: 2 },
-    loop: true,
-    delay: 500,
   });
 
   return (

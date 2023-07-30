@@ -60,7 +60,6 @@ const ConveyerSmooth: React.FC = () => {
     return () => clearInterval(conveyerInterval);
   }, []);
 
-  console.log(data);
   return (
     <section className="pane conveyer">
       <section className="animation-window">
